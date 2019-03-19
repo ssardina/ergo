@@ -1,0 +1,58 @@
+INSTALLING THE SQUIRREL WORLD
+
+You need Racket Scheme <http://racket-lang.org/>.  I used version 5.2.  Other
+versions may work too.  What follows are instructions for using the program
+under Linux.  Using it with Windows or a Mac is similar.
+
+Confirm that Racket is installed properly:
+
+  Linux%> racket -e '(+ 3 4)'
+  7
+
+If this works, then try starting the Squirrel World (called "sw-server.scm")
+by typing this at the command-line:
+
+  Linux%> racket -fm sw-server.scm [<seed>]
+
+This should start the simulation window.  You should see a default 30x50 grid,
+with squirrel icons located at each of the four corners and a smattering of
+acorns.  Type a "q" in this window to close the window and stop the program.
+(The seed number can be used to restart a game in the same configuration.)
+
+Now you are ready to try some squirrel agents.  Start the server again and
+open another terminal window on the same machine. In this window, connect to
+the server using telnet at port 8123:
+
+  Linux%> telnet localhost 8123
+  Trying 127.0.0.1...
+  Connected to localhost.
+  Escape character is '^]'.
+  Wally
+
+If this works, type the command "forward" in the telnet session. It should
+respond with "ok".
+
+  forward
+  ok
+
+Look at the server window. One of the squirrels should have moved 1 unit
+forward. Type a "q" in the server window to abort it and the telnet session.
+
+Finally, you are ready to try a very simple automated agent provided called
+"wall-follower".  Restart the server, and in the other terminal window, start
+this squirrel agent as follows:
+
+  Linux%> racket -fm wall-follower.scm
+  Made network connection
+  Start wall following
+
+In the server window, you should see one of the squirrels slowly inching
+itself forward until it reaches a wall.  At that point, it should run back
+home, and start inching towards a second wall to its right.  When it finds it,
+it should start running back and forth between the two walls.  This is all it
+does.  You can get the second, third, and fourth squirrel to do the same thing
+by opening more terminal windows and starting them like the first one.
+Eventually all squirrels will run out of energy, turn grey, and stop moving,
+but you can abort the session before then by typing "q" in the server window.
+
+That's it. You're up and running.  Good luck!

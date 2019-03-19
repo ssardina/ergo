@@ -1,0 +1,60 @@
+RULES OF THE GAME
+
+Squirrels and acorns live in a world divided into a large rectangular grid.
+Each acorn and squirrel is located at some point on the grid, and each point
+on the grid can contain any number of squirrels and acorns.  Between any two
+adjacent grid points there may be a wall that blocks passage between the two
+points.  A wall also surrounds the entire world.
+
+Acorns are completely passive.  Squirrels on the other hand have a number of
+actions at their disposal which are either ordinary actions (that can change
+the world) or sensing actions (that provide information to the squirrel).
+
+Each action has a fixed duration.  Squirrels have an energy level which is how
+many units of time they have left before they expire.  Squirrels start at the
+maximum level, which is 3000 units.  Energy level decreases as time advances,
+but can be increased by eating an acorn.
+
+Squirrels can pick up acorns and carry up to 2 of them.  They can also drop an
+acorn they are holding.  Squirrels can also build additional wall segments.
+
+GOAL OF THE GAME: The first squirrel to get 4 acorns wins.
+
+A squirrel has access to the following ordinary primitive actions with the
+durations as indicated:
+
+- left    1
+     Effect: Turn to the left 90 degrees
+- right   1
+     Effect: Turn to the right 90 degrees
+- forward 1
+     Effect: If there is wall in front, then the squirrel bumps into the wall,
+             is stunned, and loses 750 units of time. (See "look" below.)
+             Otherwise the squirrel moves ahead 1 unit.
+- pick    30
+     Effect: If there is an acorn present and no other squirrel present 
+             and the squirrel is not already holding two acorns,
+             then the squirrel picks up the acorn.  (See "smell" below.)
+             Otherwise, no effect.
+- drop    30
+     Effect: If the squirrel is holding an acorn then she drops it.
+             Otherwise, no effect.
+- eat     60
+     Effect: If the squirrel is holding an acorn then she disposes of it,
+             getting an energy boost of 2700 time units.
+             Otherwise, no effect.
+- build   50
+     Effect: The squirrel creates a wall segment 1 unit long right in front 
+             of her.  (Note: a squirrel can box herself in and starve!)
+
+and the following sensing primitive actions:
+
+- feel    1
+     Sensing result: the squirrel's energy on a scale from 0% to 100%.
+- look   10
+     Sensing result: is there a wall directly in front? 
+- smell   4
+     Sensing result: are there acorns or other squirrels right here?
+- listen  40
+     Sensing result: a list of the relative coordinates of other
+             squirrels who are nearby but not hiding behind a wall. 
