@@ -72,10 +72,10 @@ See http://racket-lang.org/. You can test that things are working with
        
     Other files can be loaded using "include" within myfile.scm.
 
-3.- To load an ERGO file myfile.scm and then evaluate an expression `expr`:
+3. To load an ERGO file myfile.scm and then evaluate an expression `expr`:
 
        racket -l ergo -f myfile.scm -e 'expr'
 
-4- To load an ERGO file myfile.scm and then evaluate (main)
+4. To load an ERGO file myfile.scm and then evaluate (main)
 
        racket -l ergo -f myfile.scm -m
