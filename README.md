@@ -51,9 +51,9 @@ See http://racket-lang.org/. You can test that things are working with
 
 5. Test that ERGO is correctly installed:
 
-     > racket -l ergo -e '(ergo-do :nil)'
-         Loading ERGO v1.5 (Mar 2018) in Racket 5.2 ...
-     '()
+          > racket -l ergo -e '(ergo-do :nil)'
+              Loading ERGO v1.5 (Mar 2018) in Racket 5.2 ...
+          '()
 
 
 ## RUNNING ERGO 
