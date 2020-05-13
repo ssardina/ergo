@@ -83,10 +83,26 @@ See http://racket-lang.org/. You can test that things are working with
 
      Other files can be loaded using "include" within myfile.scm.
 
-3. To load an ERGO file `myfile.scm` and then evaluate `(main)`
+3. To load an ERGO file `Examples/lift-table.scm` and then evaluate `(main)`
 
-     ```
-     racket -l ergo -f myfile.scm -m
+     ```shell
+     racket -l ergo -f Examples/lift-table.scm -m
+    Loading ERGO v1.5 (Mar 2018) in Racket v6.11 ...
+     Loading on demand /home/ssardina/git/soft/agents/ERGO.git/System/ergo-do.scm
+     '((grab! r1 e1)
+       (lift! r1 1)
+       (grab! r2 e2)
+       (lift! r2 1)
+       (lift! r2 1)
+       (lift! r1 1)
+       (lift! r1 1)
+       (lift! r2 1)
+       (lift! r2 1)
+       (lift! r1 1)
+       (lift! r1 1)
+       (lift! r2 1)
+       (lift! r2 1)
+       (lift! r1 1))
      ```
      
 4. To load an ERGO file `myfile.scm` and then evaluate an expression `expr`:
