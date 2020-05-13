@@ -27,8 +27,10 @@ This describes how to setup and run the ERGO system.
 
 See http://racket-lang.org/. You can test that things are working with
 
+     ```racket
      > racket -e '(+ 3 4)'
      7
+     ```
 
 ### INSTALLATION OF ERGO
 
@@ -36,25 +38,30 @@ See http://racket-lang.org/. You can test that things are working with
 
 2. Then find out where Racket keeps user-defined collections.  It's the first element of "`(current-library-collection-paths)`":
 
-       > racket -e '(car (current-library-collection-paths))'
-       #<path:/Users/hector/Library/Racket/5.2/collects>
+     ```racket
+     > racket -e '(car (current-library-collection-paths))'
+     #<path:/Users/hector/Library/Racket/5.2/collects>
+     ```
 
 3. Create the user `/path/to/collects/` directory from (2) if needed, and a new subdirectory inside it called "`ergo`".
 
 4. Put a file called `main.ss` in the `ergo/` directory from step (3).  It should contain just the following three lines:
 
-       (module main racket
-         (require (file "/path/to/implementation/full-system.scm"))
-         (provide (all-from-out (file "/path/to/implementation/full-system.scm"))))
+     ```racket
+     (module main racket
+     (require (file "/path/to/implementation/full-system.scm"))
+     (provide (all-from-out (file "/path/to/implementation/full-system.scm"))))
+     ```
 
    where the `/path/to/implementation/` is the directory from step (1) above.  
 
 5. Test that ERGO is correctly installed:
 
-          > racket -l ergo -e '(ergo-do :nil)'
-              Loading ERGO v1.5 (Mar 2018) in Racket 5.2 ...
-          '()
-
+     ```racket
+     > racket -l ergo -e '(ergo-do :nil)'
+         Loading ERGO v1.5 (Mar 2018) in Racket 5.2 ...
+     '()
+     ```
 
 ## RUNNING ERGO 
 
@@ -62,20 +69,43 @@ See http://racket-lang.org/. You can test that things are working with
 
 1. To access ERGO interactively:
 
-       racket -l ergo -i
+```shell
+racket -l ergo -i
+```
 
    From there, the primitive functions like `define-fluents` and `ergo-do` can be used.  Files containing other definitions can be loaded with `include`.
 
 2. To run interactively after loading an ERGO file myfile.scm:
 
-       racket -l ergo -i -f myfile.scm 
-       
-    Other files can be loaded using "include" within myfile.scm.
+     ```shell
+     racket -l ergo -i -f myfile.scm 
+     ```       
 
-3. To load an ERGO file myfile.scm and then evaluate an expression `expr`:
+     Other files can be loaded using "include" within myfile.scm.
 
-       racket -l ergo -f myfile.scm -e 'expr'
+3. To load an ERGO file `myfile.scm` and then evaluate `(main)`
 
-4. To load an ERGO file myfile.scm and then evaluate (main)
+     ```
+     racket -l ergo -f myfile.scm -m
+     ```
+     
+4. To load an ERGO file `myfile.scm` and then evaluate an expression `expr`:
 
-       racket -l ergo -f myfile.scm -m
+     ```shell
+     racket -l ergo -f myfile.scm -e 'expr'
+     ```
+
+6. To load an ERGO file `reactive-elevator-run.scm` and run the program `control`:
+
+     ```shell
+     racket -l ergo -f Examples/reactive-elevator-run.scm -e "(ergo-do control)"   
+        Loading ERGO v1.5 (Mar 2018) in Racket v6.11 ...
+     Loading on demand /home/ssardina/git/soft/agents/ERGO.git/System/ergo-do.scm
+     '(down! down! down! down! turnoff! up! up! turnoff! down! down! down! down!)    
+     ```
+     
+     ```
+
+
+
+
