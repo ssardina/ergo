@@ -69,9 +69,9 @@ See http://racket-lang.org/. You can test that things are working with
 
 1. To access ERGO interactively:
 
-```shell
-racket -l ergo -i
-```
+     ```shell
+     racket -l ergo -i
+     ```
 
    From there, the primitive functions like `define-fluents` and `ergo-do` can be used.  Files containing other definitions can be loaded with `include`.
 
@@ -103,9 +103,6 @@ racket -l ergo -i
      Loading on demand /home/ssardina/git/soft/agents/ERGO.git/System/ergo-do.scm
      '(down! down! down! down! turnoff! up! up! turnoff! down! down! down! down!)    
      ```
-     
-     ```
-
-
+   
 
 
