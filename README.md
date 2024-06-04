@@ -1,15 +1,12 @@
 # ERGO
 
-This is a distribution of software that comes with the book [Programming Cognitive Robots](http://www.cs.toronto.edu/~hector/pcr.html) by Hector Levesque.  It comes with absolutely no guaranties
-or support.  Also, do read the copyright notice.
+This is a distribution of software that comes with the book [Programming Cognitive Robots](http://www.cs.toronto.edu/~hector/pcr.html) by Hector Levesque.  It comes with absolutely no guaranties or support. It was first released March 2018 (version 1.5, which conforms with the book).
+
 
 This directory contains all the files and directions for running the ERGO
 system as well as a number of ERGO programs. It contains the following:
 
-* `README.txt`: This file
-* `history.txt`: A list of updates and fixes to the software
 * `ergo-sheet.pdf`: A one page summary of the ERGO system
-* `install.txt`: Instructions on installing ERGO
 * `System/`: All the system files
 * `Examples/`: Some example ERGO programs
 * `Projects/`: Three larger ERGO programs
@@ -22,6 +19,8 @@ The original collection of files was put together on **March 17, 2019**.
 This describes how to setup and run the ERGO system.
 
 ## INSTALL
+
+This describes how to setup and run the ERGO system.
 
 ### INSTALLATION OF RACKET
 
@@ -36,7 +35,7 @@ See http://racket-lang.org/. You can test that things are working with
 
 1. First, put all the files in the `Ergo/System/` directory somewhere convenient, away from user ERGO programs.  On a Mac, a reasonable choice is to create `~/Library/Application Support/Ergo/` and put them there.
 
-2. Then find out where Racket keeps user-defined collections.  It's the first element of "`(current-library-collection-paths)`". 
+2. Then find out where Racket keeps user-defined collections.  It's the first element of "`(current-library-collection-paths)`".
 
      In Mac:
 

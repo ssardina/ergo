@@ -1,2 +1,0 @@
-Mar 2018:   This is the first release of software that conforms with the book.
-            Ergo system version 1.5.
